@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Kick Ass Sites</title>
+  <meta name="description" content="Custom web design, fast hosting, domain registration, SEO setup, and ongoing support — all included for $20/month. No contracts, no surprises.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .svc-detail {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      padding:80px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .svc-detail:last-child { border-bottom:none; }
+    .svc-detail:nth-child(even) .svc-detail-text { order:2; }
+    .svc-detail:nth-child(even) .svc-detail-visual { order:1; }
+    .svc-detail-tag {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.75rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--lime);
+      background:var(--lime-dim);
+      border:1px solid var(--lime-brd);
+      padding:4px 14px;
+      border-radius:999px;
+      margin-bottom:16px;
+    }
+    .svc-detail-title { font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:16px; }
+    .svc-detail-desc  { font-size:.97rem; color:var(--text-2); line-height:1.8; margin-bottom:28px; }
+    .svc-detail-list  { display:flex; flex-direction:column; gap:11px; }
+    .svc-detail-item  { display:flex; align-items:center; gap:12px; font-size:.92rem; color:var(--text-2); }
+    .svc-detail-item svg { width:18px; height:18px; color:var(--lime); flex-shrink:0; }
+    .svc-detail-visual {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      padding:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:280px;
+      position:relative;
+      overflow:hidden;
+    }
+    .svc-detail-visual::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:radial-gradient(ellipse at center, rgba(196,255,0,.07) 0%, transparent 70%);
+    }
+    .svc-detail-visual svg {
+      width:140px;
+      height:140px;
+      color:rgba(196,255,0,.25);
+      position:relative;
+    }
+    .svc-detail--support .svc-detail-tag { color:#ff8a95; background:rgba(255,71,87,.1); border-color:rgba(255,71,87,.2); }
+    .svc-detail--support .svc-detail-visual::before { background:radial-gradient(ellipse at center, rgba(255,71,87,.06) 0%, transparent 70%); }
+    .svc-detail--support .svc-detail-visual svg { color:rgba(255,71,87,.2); }
+    .svc-detail--support .svc-detail-item svg { color:var(--red); }
+
+    @media (max-width:768px) {
+      .svc-detail { grid-template-columns:1fr; gap:32px; }
+      .svc-detail:nth-child(even) .svc-detail-text { order:1; }
+      .svc-detail:nth-child(even) .svc-detail-visual { order:2; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    </span>
+    Kick Ass <span class="accent">Sites</span>
+  </a>
+  <div class="nav-menu">
+    <a href="index.html"    class="nav-link">Home</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="faqs.html"     class="nav-link">FAQs</a>
+    <a href="videos.html"   class="nav-link">Videos</a>
+    <a href="blog.html"     class="nav-link">Blog</a>
+    <a href="contact.html"  class="nav-link nav-cta btn btn-lime">Get Started</a>
+  </div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-drawer">
+  <a href="index.html"    class="nav-link">Home</a>
+  <a href="services.html" class="nav-link">Services</a>
+  <a href="faqs.html"     class="nav-link">FAQs</a>
+  <a href="videos.html"   class="nav-link">Videos</a>
+  <a href="blog.html"     class="nav-link">Blog</a>
+  <a href="contact.html"  class="btn btn-lime">Get Started</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <p class="section-label">What You Get</p>
+      <h1 class="page-hero-title">Everything Included. $20/Month.</h1>
+      <p class="page-hero-desc">No picking features, no add-on charges, no surprise invoices. Every plan includes custom design, fast hosting, your domain, SSL, SEO setup, and ongoing support. That's the deal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES DETAIL -->
+<section class="section">
+  <div class="container">
+
+    <!-- Custom Web Design -->
+    <div class="svc-detail reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Core Service</span>
+        <h2 class="svc-detail-title">Custom Web Design</h2>
+        <p class="svc-detail-desc">No templates, no page builders, no cookie-cutter garbage. We design your website from scratch, built specifically for your business, your brand, and your customers. You get a site that looks like you paid ten times more.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Unique design — not a recycled template
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Revisions until you're 100% happy
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Built to convert visitors into customers
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Clean, hand-coded — no bloated builders
+          </div>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+    </div>
+
+    <!-- Fast Hosting -->
+    <div class="svc-detail reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Infrastructure</span>
+        <h2 class="svc-detail-title">Blazing-Fast Hosting</h2>
+        <p class="svc-detail-desc">Your website lives on enterprise-grade servers that load in under a second. Fast hosting isn't a luxury — it's how you keep visitors from bouncing and how Google decides where to rank you. We include it at no extra charge.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            99.9% uptime guarantee
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            SSL certificate included (HTTPS)
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Automatic daily backups
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            CDN for fast load times globally
+          </div>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+    </div>
+
+    <!-- Domain Name -->
+    <div class="svc-detail reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Launch Essential</span>
+        <h2 class="svc-detail-title">Domain Name — Included</h2>
+        <p class="svc-detail-desc">We register your .com domain and connect everything for you. No messing around with DNS settings or registrar accounts — we handle it. The domain is registered in your name and belongs to you, forever.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Registered in your name — you own it
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            DNS fully configured and connected
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Email forwarding setup included
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Already have one? We'll connect it free
+          </div>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+    </div>
+
+    <!-- Mobile Responsive -->
+    <div class="svc-detail reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Modern Standard</span>
+        <h2 class="svc-detail-title">Mobile Responsive Design</h2>
+        <p class="svc-detail-desc">Over 60% of web traffic is on phones. Every site we build looks and works perfectly on any device — phone, tablet, laptop, desktop, 4K monitor. No separate mobile version needed. One site that adapts to everything.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Tested across all screen sizes and browsers
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Touch-friendly navigation and tap targets
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Google Core Web Vitals optimized
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Fast load times even on slow connections
+          </div>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+    </div>
+
+    <!-- SEO -->
+    <div class="svc-detail reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Growth</span>
+        <h2 class="svc-detail-title">SEO Ready from Day One</h2>
+        <p class="svc-detail-desc">A website nobody can find is a waste of money. We build every site with solid SEO foundations — proper structure, fast load speed, meta tags, schema markup, and a sitemap submitted to Google the day you launch.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Meta titles and descriptions on every page
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Schema markup for local businesses
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Sitemap submitted to Google Search Console
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Page speed is a ranking factor — we nail it
+          </div>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+    </div>
+
+    <!-- Ongoing Support -->
+    <div class="svc-detail svc-detail--support reveal">
+      <div class="svc-detail-text">
+        <span class="svc-detail-tag">Always On</span>
+        <h2 class="svc-detail-title">Ongoing Support — Included Forever</h2>
+        <p class="svc-detail-desc">We don't disappear after launch. Content updates, bug fixes, new sections, performance tweaks — it's all part of the deal. Think of us as your web team on retainer, minus the agency price tag.</p>
+        <div class="svc-detail-list">
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Unlimited small content updates
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Bug fixes handled same business day
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Regular performance monitoring
+          </div>
+          <div class="svc-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            New features added as your business grows
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="mailto:hello@kickasssites.com" class="btn btn-lime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Us: hello@kickasssites.com
+          </a>
+        </div>
+      </div>
+      <div class="svc-detail-visual">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2 class="cta-title">Ready to Get Online?</h2>
+      <p class="cta-desc">All of this for $20/month. No setup fees, no contracts, no surprises. Email us and we'll have your site live within 48 hours of design approval.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-lime">Get Started Today <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="faqs.html" class="btn btn-outline">Read Our FAQs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <h3>Stay in the Loop</h3>
+        <p>Web tips, business growth advice, and exclusive offers — delivered free.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" class="newsletter-input" placeholder="Your email address">
+        <button type="submit" class="btn btn-lime">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Kick Ass Sites
+        </div>
+        <p class="footer-brand-desc">Professional websites for $20/month — custom design, fast hosting, and your domain name included. No BS.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">FB</a>
+          <a href="#" class="footer-social-link">IG</a>
+          <a href="#" class="footer-social-link">LI</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="faqs.html">FAQs</a>
+          <a href="videos.html">Videos</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">What's Included</div>
+        <div class="footer-links">
+          <a href="services.html">Custom Web Design</a>
+          <a href="services.html">Fast Hosting</a>
+          <a href="services.html">Domain Name</a>
+          <a href="services.html">Mobile Responsive</a>
+          <a href="services.html">SEO Ready</a>
+          <a href="services.html">Ongoing Support</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span><a href="mailto:hello@kickasssites.com">hello@kickasssites.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Serving clients everywhere</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Kick Ass <span>Sites</span>. All rights reserved.</p>
+      <div class="footer-emergency">Start Today: hello@kickasssites.com</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

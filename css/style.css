@@ -152,6 +152,8 @@ h1,h2,h3,h4,h5 {
 }
 .nav-link:hover,.nav-link.active { color:var(--lime); background:var(--lime-dim); }
 .nav-cta { margin-left:14px; }
+.nav-link.btn-lime { color:#0c0c0c; }
+.nav-link.btn-lime:hover { color:#fff; }
 
 .hamburger { display:none; flex-direction:column; gap:5px; padding:6px; margin-left:14px; }
 .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; transition:all .3s; }
